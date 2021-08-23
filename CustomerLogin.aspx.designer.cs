@@ -10,78 +10,60 @@
 namespace Seenu_Sport_Academy.Admin {
     
     
-    public partial class Home {
+    public partial class CustomerLogin {
         
         /// <summary>
-        /// lbltopup control.
+        /// txtcode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltopup;
+        protected global::System.Web.UI.WebControls.TextBox txtcode;
         
         /// <summary>
-        /// lbltodaycust control.
+        /// txtname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltodaycust;
+        protected global::System.Web.UI.WebControls.TextBox txtname;
         
         /// <summary>
-        /// lbltodaytopup control.
+        /// btncancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltodaytopup;
+        protected global::System.Web.UI.WebControls.Button btncancel;
         
         /// <summary>
-        /// topupcustomer control.
+        /// btnsearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label topupcustomer;
+        protected global::System.Web.UI.WebControls.Button btnsearch;
         
         /// <summary>
-        /// topupamounts control.
+        /// Trans control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label topupamounts;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Trans;
         
         /// <summary>
-        /// lblnoofcustomer control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblnoofcustomer;
-        
-        /// <summary>
-        /// lbltodaycus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltodaycus;
-        
-        /// <summary>
-        /// LblPrimaryIncome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPrimaryIncome;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

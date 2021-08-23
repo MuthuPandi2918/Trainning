@@ -10,78 +10,87 @@
 namespace Seenu_Sport_Academy.Admin {
     
     
-    public partial class Home {
+    public partial class AdminLevelReport {
         
         /// <summary>
-        /// lbltopup control.
+        /// txtCusCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltopup;
+        protected global::System.Web.UI.WebControls.TextBox txtCusCode;
         
         /// <summary>
-        /// lbltodaycust control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltodaycust;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// lbltodaytopup control.
+        /// txtCusName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltodaytopup;
+        protected global::System.Web.UI.WebControls.TextBox txtCusName;
         
         /// <summary>
-        /// topupcustomer control.
+        /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label topupcustomer;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// topupamounts control.
+        /// btncancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label topupamounts;
+        protected global::System.Web.UI.WebControls.Button btncancel;
         
         /// <summary>
-        /// lblnoofcustomer control.
+        /// View control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblnoofcustomer;
+        protected global::System.Web.UI.WebControls.Button View;
         
         /// <summary>
-        /// lbltodaycus control.
+        /// grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltodaycus;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl grid;
         
         /// <summary>
-        /// LblPrimaryIncome control.
+        /// lbllevelcode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPrimaryIncome;
+        protected global::System.Web.UI.WebControls.Label lbllevelcode;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

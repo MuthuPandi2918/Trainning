@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="Seenu_Sport_Academy.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<title>Admin Panel</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,400,500,700"
+  rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/av_s_main.css">
+<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+<!-- END Custom CSS-->
+</head>
+<body class="horizontal-layout horizontal-menu 2-columns   menu-expanded" data-open="hover"
+data-menu="horizontal-menu" data-col="2-columns">
+<!-- fixed-top-->
+    <form id="TJ" runat="server">
+<form>
+<nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow navbar-static-top navbar-light navbar-border navbar-brand-center">
+  <div class="navbar-wrapper">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav flex-row">
+        <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
+        <li class="nav-item"> <a class="navbar-brand" href="#"> <img class="brand-logo" src="assets/img/logo.png"> </a> </li>     
+      </ul>
+    </div>
+    <div class="navbar-container av_top_nav">
+      <div class=" navbar-collapse">        
+        <ul class="nav navbar-nav float-right ml-auto">
+          <li class="dropdown dropdown-user nav-item"> <a class="av_top_usr_btn nav-link dropdown-user-link" href="#" data-toggle="dropdown"> <span class="mr-1 pt-3 av_s_mbl_hide av_s_tab_hide" style="    line-height: 30px;"> </span> <span class="avatar avatar-online"> <img src="assets/img/user_img.png" alt=" "></span> </a>
+            <div class=" top_usr_mnu dropdown-menu-right"><a class="dropdown-item" href="ChangePassword.aspx"><i class="ft-user"></i> Change Password</a> 
+               <%-- <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
+                <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
+                <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>--%>
+              <div class="dropdown-divider"></div>
+              <a <%--class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a>--%> <asp:LinkButton ID="but" runat="server" class="dropdown-item" OnClick="logout_Click"><i class="ft-power"></i>Logout</asp:LinkButton></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-without-dd-arrow navbar-shadow"
+  role="navigation" data-menu="menu-wrapper">
+  <div class="navbar-container main-menu-content" data-menu="menu-container">
+    <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+      <li class="nav-item" > <a class="nav-link" href="Home.aspx"><i class="fa fa-home"></i> <span>Dashboard</span> </a> </li>
+      <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="fa fa-apple"></i><span>Master</span></a>
+        <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="StateMaster.aspx" data-toggle="dropdown"> State</a> </li>
+            <li><a class="dropdown-item" href="DistrictMaster.aspx" data-toggle="dropdown"> District</a> </li>
+             <%-- <li><a class="dropdown-item" href="HolidayMaster.aspx" data-toggle="dropdown"> Holiday Master</a> </li>       --%>        
+        </ul>
+      </li>
+      <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="fa fa-bookmark-o"></i><span>Registration</span></a>
+           <ul class="dropdown-menu">
+         <li><a class="dropdown-item" href="Registration.aspx" data-toggle="dropdown"> Registration</a> </li>
+          <%--  <li><a class="dropdown-item" href="MobileNumberUpdate.aspx" data-toggle="dropdown"> MobileNumber Update</a> </li>--%>
+                  <li><a class="dropdown-item" href="TeamDetails.aspx" data-toggle="dropdown"> Team Details</a> </li>
+              </ul>
+      </li>
+         <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="fa fa-bookmark-o"></i><span>Report</span></a>
+           <ul class="dropdown-menu">
+     <%--    <li><a class="dropdown-item" href="CommissionPost.aspx" data-toggle="dropdown"> Post Commission</a> </li> --%>       
+              
+                 <li><a class="dropdown-item" href="BalanceCheck.aspx" data-toggle="dropdown"> Customer  Wallet Balance</a> </li>
+                <%-- <li><a class="dropdown-item" href="CustomerWalletBalance.aspx" data-toggle="dropdown"> Customer  Wallet Balance</a> </li>--%>
+                 <li><a class="dropdown-item" href="LevelIncome.aspx" data-toggle="dropdown"> Level Income</a> </li>
+                <li><a class="dropdown-item" href="AdminLevelReport.aspx" data-toggle="dropdown"> Level Report</a> </li>
+                <li><a class="dropdown-item" href="CustomerDetails.aspx" data-toggle="dropdown"> Customer Details</a> </li>
+                  <li><a class="dropdown-item" href="CustomerLogin.aspx" data-toggle="dropdown"> Customer Login</a> </li>               
+              </ul>
+      </li>
+         <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="fa fa-bookmark-o"></i><span>My Account</span></a>
+           <ul class="dropdown-menu">
+         <li><a class="dropdown-item" href="ChangePassword.aspx" data-toggle="dropdown"> Change Password</a> </li>    
+              
+                 <li> <asp:LinkButton ID="logout" runat="server" class="dropdown-item" OnClick="logout_Click">Logout</asp:LinkButton> </li>    
+                             
+              </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="app-content content av_s_bdy_cnt">
+  <div class="content-wrapper">
+    <div class="content-body">
+       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>        
+      </div> 
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+
+<footer class="footer footer-static footer-light navbar-shadow">
+  <p class="clearfix blue-grey  text-sm-center mb-0 px-2"> <span class="float-md-left d-block d-md-inline-block">Copyright @ 2019 All rights reserved. </span> <span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Maintained By<a href="http://www.availtechnologies.net/home.htm"  target="_blank"> <strong>Avail Technologies</strong></a></span> </p>
+</footer>
+</form>
+<!-- BEGIN VENDOR JS--> 
+<script src="assets/js/vendors.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="assets/js/jquery.sticky.js"></script> 
+<script src="assets/js/app-menu.min.js" type="text/javascript"></script> 
+<script src="assets/js/app.min.js" type="text/javascript"></script>
+<script src="assets/js/custom.js" type="text/javascript"></script>
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"></script>
+        </form>
+</body>
+</html>
