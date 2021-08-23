@@ -1,0 +1,263 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Customer.master.cs" Inherits="Seenu_Sport_Academy.Website.Customer" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEENU SPORTS ACADEMY</title>
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <!--icofont icon css-->
+    <link rel="stylesheet" href="css/icofont.min.css">
+    <!--magnific popup css-->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:600,700,800,800i,900,900i&display=swap" rel="stylesheet">
+    <!--main css-->
+    <link rel="stylesheet" href="css/app.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script language="Javascript">
+        var digits = "0123456789";
+        var phoneNumberDelimiters = "()- ";
+        var validWorldPhoneChars = phoneNumberDelimiters + "+";
+        var minDigitsInIPhoneNumber = 10;
+        function isInteger(s) {
+            var i;
+            for (i = 0; i < s.length; i++) {
+                var c = s.charAt(i);
+                if (((c < "0") || (c > "9"))) return false;
+            }
+            return true;
+        }
+        function trim(s) {
+            var i;
+            var returnString = "";
+            for (i = 0; i < s.length; i++) {
+                var c = s.charAt(i);
+                if (c != " ") returnString += c;
+            }
+            return returnString;
+        }
+        function stripCharsInBag(s, bag) {
+            var i;
+            var returnString = "";
+            for (i = 0; i < s.length; i++) {
+                var c = s.charAt(i);
+                if (bag.indexOf(c) == -1) returnString += c;
+            }
+            return returnString;
+        }
+        function checkInternationalPhone(strPhone) {
+            var bracket = 3
+            strPhone = trim(strPhone)
+            if (strPhone.indexOf("+") > 1) return false
+            if (strPhone.indexOf("-") != -1) bracket = bracket + 1
+            if (strPhone.indexOf("(") != -1 && strPhone.indexOf("(") > bracket) return false
+            var brchr = strPhone.indexOf("(")
+            if (strPhone.indexOf("(") != -1 && strPhone.charAt(brchr + 2) != ")") return false
+            if (strPhone.indexOf("(") == -1 && strPhone.indexOf(")") != -1) return false
+            s = stripCharsInBag(strPhone, validWorldPhoneChars);
+            return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
+        }
+        function Validatephone() {
+            var Phone = document.FeedBack.telephone
+
+            if ((Phone.value == null) || (Phone.value == "")) {
+                Phone.focus()
+                return false
+            }
+            if (checkInternationalPhone(Phone.value) == false) {
+                return false
+            }
+            return true
+        }
+        function echeck(str) {
+
+            var at = "@"
+            var dot = "."
+            var lat = str.indexOf(at)
+            var lstr = str.length
+            var ldot = str.indexOf(dot)
+            if (str.indexOf(at) == -1) {
+
+                return false
+            }
+
+            if (str.indexOf(at) == -1 || str.indexOf(at) == 0 || str.indexOf(at) == lstr) {
+
+                return false
+            }
+
+            if (str.indexOf(dot) == -1 || str.indexOf(dot) == 0 || str.indexOf(dot) == lstr) {
+
+                return false
+            }
+
+            if (str.indexOf(at, (lat + 1)) != -1) {
+
+                return false
+            }
+
+            if (str.substring(lat - 1, lat) == dot || str.substring(lat + 1, lat + 2) == dot) {
+
+                return false
+            }
+
+            if (str.indexOf(dot, (lat + 2)) == -1) {
+
+                return false
+            }
+
+            if (str.indexOf(" ") != -1) {
+
+                return false
+            }
+
+            return true
+        }
+        function ValidateForm() {
+            var emailID = document.FeedBack.email
+            if ((emailID.value == null) || (emailID.value == "")) {
+                emailID.focus()
+                return false
+            }
+            if (echeck(emailID.value) == false) {
+                emailID.value = ""
+                emailID.focus()
+                return false
+            }
+            return true
+        }
+
+        function submitcheck() {
+            if (Validatephone() == false || ValidateForm() == false) {
+                if (Validatephone() == false) {
+                    alert("Please Enter a Valid Phone Number")
+                    document.FeedBack.telephone.value = ""
+                    document.FeedBack.telephone.focus()
+                }
+                if (ValidateForm() == false) {
+                    alert("Please Enter a Valid Email ID")
+                    document.FeedBack.email.value = ""
+                    document.FeedBack.email.focus()
+                }
+                return false
+            }
+            else {
+
+                return true
+            }
+        }
+
+
+        function check() {
+            if (document.FeedBack.firstname.value == 0 || document.FeedBack.firstname.value == null) {
+                alert("Fill your Name..");
+                document.FeedBack.firstname.focus();
+                return false;
+            }
+            if (document.FeedBack.email.value == 0 || document.FeedBack.email.value == null) {
+                alert("Fill your email..");
+                document.FeedBack.email.focus();
+                return false;
+            }
+            if (document.FeedBack.telephone.value == 0 || document.FeedBack.telephone.value == null) {
+                alert("Fill your phone number..");
+                document.FeedBack.telephone.focus();
+                return false;
+            }
+
+
+            if (document.FeedBack.comments.value == 0 || document.FeedBack.comments.value == null) {
+                alert("Give your comments...");
+                document.FeedBack.comments.focus();
+                return false;
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--Start Preloader-->
+        <div class="preloader" id="preloader"></div>
+        <!--End Preloader-->
+        <!-- header top begin -->
+        <header class="header-section" id="header-section">
+            <!-- nav top begin -->
+            <nav id="navbar" class="navbar navbar-expand-lg navbar-light reunir-navbar">
+                <div class="container">
+                    <div class="logo-section">
+                        <a class="logo-title navbar-brand" href="Home.aspx">
+                            <img src="img/logo.png" alt="logo"></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="icofont-navigation-menu"></i>
+                    </button>
+                    <div class="collapse navbar-collapse nav-main justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav" id="primary-menu">
+                            <li class="nav-item active">
+                                <a class="nav-link active" href="Home.aspx">HOME                           
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="About.aspx">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="courses.aspx">COURSES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gallery.aspx">GALLERY</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.aspx">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side-box">
+                        <a class="join-btn" href="UserLogin.aspx">LOGIN</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav top end -->
+        </header>
+        <!-- header top end -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- footer section begin -->
+        <footer class="footer-section">
+            <div class="overlay">
+                <div class="footer-content">
+                    <div class="container">
+                        <div class="footer-bottom av_ftr_btm">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-6 col-md-12 d-flex justify-content-start reunir-content-center">
+                                    <div class="footer-bottom-left">
+                                        <p>Copyrights 2019  All Rights Reserved </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 d-flex justify-content-end reunir-content-center">
+                                    <div class="footer-bottom-right">
+                                        <ul>
+                                            <li>Maintained By <a href="http://www.availtechnologies.net/home.htm" target="_blank">Avail Technologies</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer section end -->
+        <script src="js/app.js"></script>
+    </form>
+</body>
+</html>
